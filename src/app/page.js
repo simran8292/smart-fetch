@@ -159,7 +159,7 @@ export default function Home() {
             <span>PAN-INDIA SOLUTIONS</span>
           </div>
           <div className="top-bar-right">
-            <a href="#contact" class="quote-link" id="topQuoteLink">GET QUOTE →</a>
+            <a href="#contact" className="quote-link" id="topQuoteLink">GET QUOTE →</a>
           </div>
         </div>
       </div>
@@ -339,8 +339,8 @@ export default function Home() {
       <section className="partners-section" id="partners">
         <div className="partners-container">
           <div className="section-header-compact">
-            <span class="section-tagline">GLOBAL STANDARDS</span>
-            <h2 class="section-title-compact">TRUSTED PARTNER BRAND ECOSYSTEM</h2>
+            <span className="section-tagline">GLOBAL STANDARDS</span>
+            <h2 className="section-title-compact">TRUSTED PARTNER BRAND ECOSYSTEM</h2>
           </div>
           
           <div className="logo-carousel-viewport">
@@ -460,7 +460,7 @@ export default function Home() {
             </div>
             <div className="about-text">
               <span className="section-tagline">ENGINEERING TRUST</span>
-              <h2 class="section-title">INTEGRATED ENGINEERING ECOSYSTEMS</h2>
+              <h2 className="section-title">INTEGRATED ENGINEERING ECOSYSTEMS</h2>
               <p className="about-body">
                 Smart Fetch stands at the intersection of architectural safety, acoustic brilliance, and intelligent facility infrastructure. From structural fire protection maps to high-end concert configurations, we deliver integrated operations managed by experienced, certified project engineers.
               </p>
