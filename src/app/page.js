@@ -140,6 +140,14 @@ export default function Home() {
     }, 800);
   };
 
+  const partners = [
+    { name: "ABB", src: "/images/partner-abb.jpeg", color: "rgba(255, 51, 102, 0.2)" },
+    { name: "Aditya Birla", src: "/images/partner-adityabirla.jpeg", color: "rgba(212, 175, 55, 0.2)" },
+    { name: "Hitachi", src: "/images/partner-hitachi.jpeg", color: "rgba(255, 0, 0, 0.2)" },
+    { name: "ISS", src: "/images/partner-iss.jpeg", color: "rgba(0, 102, 204, 0.2)" },
+    { name: "Oculus", src: "/images/partner-oculus.jpeg", color: "rgba(0, 210, 255, 0.2)" },
+  ];
+
   return (
     <>
       {/* Top Announcement Bar */}
@@ -300,10 +308,6 @@ export default function Home() {
                 <span className="badge-label">CLIENTS: 200+</span>
               </div>
               <div className="stat-badge">
-                <span className="badge-bullet blue">■</span>
-                <span className="badge-label">PROJECTS: 500+</span>
-              </div>
-              <div className="stat-badge">
                 <span className="badge-bullet green">■</span>
                 <span className="badge-label">RETENTION: 98%</span>
               </div>
@@ -338,26 +342,32 @@ export default function Home() {
       {/* Partners Section */}
       <section className="partners-section" id="partners">
         <div className="partners-container">
-          <div className="section-header-compact">
+          <div className="section-header-compact text-center">
             <span className="section-tagline">GLOBAL STANDARDS</span>
             <h2 className="section-title-compact">TRUSTED PARTNER BRAND ECOSYSTEM</h2>
+            <p className="section-desc-compact">Collaborating with industry leaders to deliver world-class security and surveillance integration.</p>
           </div>
           
-          <div className="logo-carousel-viewport">
-            <div className="logo-carousel-track" id="partnerTrack">
-              <div className="logo-slide"><Image src="/images/partner-abb.jpeg" alt="ABB" width={160} height={80} /></div>
-              <div className="logo-slide"><Image src="/images/partner-adityabirla.jpeg" alt="Aditya Birla" width={160} height={80} /></div>
-              <div className="logo-slide"><Image src="/images/partner-hitachi.jpeg" alt="Hitachi" width={160} height={80} /></div>
-              <div className="logo-slide"><Image src="/images/partner-iss.jpeg" alt="ISS" width={160} height={80} /></div>
-              <div className="logo-slide"><Image src="/images/partner-oculus.jpeg" alt="Oculus" width={160} height={80} /></div>
-              
-              {/* Duplicated for infinite scrolling */}
-              <div className="logo-slide"><Image src="/images/partner-abb.jpeg" alt="ABB" width={160} height={80} /></div>
-              <div className="logo-slide"><Image src="/images/partner-adityabirla.jpeg" alt="Aditya Birla" width={160} height={80} /></div>
-              <div className="logo-slide"><Image src="/images/partner-hitachi.jpeg" alt="Hitachi" width={160} height={80} /></div>
-              <div className="logo-slide"><Image src="/images/partner-iss.jpeg" alt="ISS" width={160} height={80} /></div>
-              <div className="logo-slide"><Image src="/images/partner-oculus.jpeg" alt="Oculus" width={160} height={80} /></div>
-            </div>
+          <div className="partners-interactive-grid">
+            {partners.map((partner, index) => (
+              <div 
+                key={index} 
+                className="partner-card" 
+                style={{ "--hover-glow": partner.color }}
+              >
+                <div className="partner-card-glow"></div>
+                <div className="partner-logo-container">
+                  <Image 
+                    src={partner.src} 
+                    alt={partner.name} 
+                    width={160} 
+                    height={80} 
+                    className="partner-logo-img"
+                  />
+                </div>
+                <div className="partner-card-border"></div>
+              </div>
+            ))}
           </div>
         </div>
       </section>
@@ -447,36 +457,50 @@ export default function Home() {
         <div className="container">
           <div className="about-grid">
             <div className="about-visual">
-              <div className="image-wrapper">
+              <div className="image-wrapper image-wrapper-about">
                 <div className="glow-ring glow-blue-large"></div>
                 <Image
-                  src="/images/audio-studio.png"
-                  alt="Advanced Audio Engineering Showcase"
+                  src="/images/about-office.jpg"
+                  alt="Modern Office Interior"
                   width={500}
-                  height={350}
+                  height={375}
                   className="about-img"
+                  priority
                 />
+                <div className="about-experience-badge">
+                  <p className="badge-number">1+</p>
+                  <p className="badge-text">Years of Excellence in Security Systems</p>
+                </div>
               </div>
             </div>
             <div className="about-text">
-              <span className="section-tagline">ENGINEERING TRUST</span>
-              <h2 className="section-title">INTEGRATED ENGINEERING ECOSYSTEMS</h2>
+              <span className="section-tagline about-tagline">ABOUT OUR COMPANY</span>
+              <h2 className="section-title about-title">Integrated Security &amp; Surveillance Solutions</h2>
+              <p className="about-body text-highlight">
+                We, <strong>Smart Fetch</strong>, protect enterprises with advanced hardware and software systems.
+              </p>
               <p className="about-body">
-                Smart Fetch stands at the intersection of architectural safety, acoustic brilliance, and intelligent facility infrastructure. From structural fire protection maps to high-end concert configurations, we deliver integrated operations managed by experienced, certified project engineers.
+                Since 2025, we have providing solutions for Security, Fire Safety, and Audio-Video integration. Our commitment to quality and innovation has made us a trusted partner for leading Indian enterprises.
               </p>
               <div className="about-bullets">
                 <div className="bullet-item">
-                  <span className="bullet-checkmark">✓</span>
-                  <span>Centralized facility control dashboard integration</span>
+                  <span className="bullet-checkmark">
+                    <svg className="icon checkmark-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                      <circle cx="12" cy="12" r="10" />
+                      <path d="m9 12 2 2 4-4" />
+                    </svg>
+                  </span>
+                  <span className="bullet-text-bold">Enterprise Security</span>
                 </div>
-                <div className="bullet-item">
-                  <span className="bullet-checkmark">✓</span>
-                  <span>Full compliance with building regulations & safety standards</span>
-                </div>
-                <div className="bullet-item">
-                  <span className="bullet-checkmark">✓</span>
-                  <span>24/7 priority SLA customer and operational support</span>
-                </div>
+              </div>
+              <div className="about-action-link">
+                <a href="#about" className="learn-more-link">
+                  Learn More About Us
+                  <svg className="icon arrow-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                    <line x1="5" y1="12" x2="19" y2="12" />
+                    <polyline points="12 5 19 12 12 19" />
+                  </svg>
+                </a>
               </div>
             </div>
           </div>
